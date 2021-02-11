@@ -68,6 +68,7 @@ node('slave1') {
 
     stage('启动tomcat') {
         sh '''
+            . ~/.bash_profile
             JENKINS_NODE_COOKIE=dontkillme
             cd $tomcat_home/bin
             sh startup.sh
