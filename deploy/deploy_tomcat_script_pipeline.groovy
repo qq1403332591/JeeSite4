@@ -59,6 +59,7 @@ node('slave1') {
 
     stage('部署新的war包') {
         sh '''
+            . ~/.bash_profile
             cp web/target/web.war $tomcat_home/webapps/
             cd $tomcat_home/webapps
             mv web.war ROOT.war
